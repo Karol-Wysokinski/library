@@ -1,5 +1,7 @@
 import model.Library;
 import model.Book;
+import model.LibraryException;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,7 +32,14 @@ public class Main {
                     System.out.println(dwa);
                     break;
                 case 3:
-                    System.out.println(trzy);
+                    System.out.println("Wpisz id książki do usunięcia");
+                    long id = SCANNER.nextLong();
+                    try {
+                        library.deleteBookById(id);
+                        System.out.println("Udało się usunąć");
+                    } catch (LibraryException libraryException) {
+                        System.out.println(libraryException.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Operacja o tym numerze jeszcze nie istnieje");
