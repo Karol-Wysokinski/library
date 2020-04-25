@@ -40,6 +40,6 @@ public class Book {
         return "\n id: "+ id +
                 "\n author: "+ author +
                 "\n title: "+ title +
-                "\n isbn: "+ isbn;
+                "\n isbn: "+ isbn +"\n";
     }
 }
